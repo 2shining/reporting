@@ -1,4 +1,4 @@
-hgf
+feature mf
   Home page that the user will see
 
   Scenario: Verify HomePage application
