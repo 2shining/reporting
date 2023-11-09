@@ -1,4 +1,4 @@
-Feature: HomePage for connection
+Featuxxxx
   Home page that the user will see
 
   Scenario: Verify HomePage application
