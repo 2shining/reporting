@@ -1,4 +1,4 @@
-shitttt
+hgf
   Home page that the user will see
 
   Scenario: Verify HomePage application
