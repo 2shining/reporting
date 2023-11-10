@@ -1,7 +1,5 @@
-
-  Home page that the user will see
-
-  Scenario: Verify HomePage application
+ 
+  Sceario: Verify HomePage application
     Given I navigate to the HomePage
     When I press the Login button
     Then I will be ringed to my Page
