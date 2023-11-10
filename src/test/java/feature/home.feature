@@ -1,4 +1,4 @@
-you mf work like i 
+
   Home page that the user will see
 
   Scenario: Verify HomePage application
