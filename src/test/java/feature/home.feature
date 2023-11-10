@@ -1,4 +1,4 @@
-you mf work
+you mf work like i say
 
   Home page that the user will see
 
