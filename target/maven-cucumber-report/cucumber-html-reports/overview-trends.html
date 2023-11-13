@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/enable-highlighting.js"></script>
+<script src="js/highlight.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+<link rel="stylesheet" href="css/stackoverflow-light.min.css"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 101) - Trends Overview</title>
+
+
+  <script>
+$(document).ready(function() {
+
+    var buildNumbers =  [ "01_first",  "other build",  "05last",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101",  "101", ] ;
+
+    var failedFeatures =  [ 1,  2,  5,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  1,  0,  1,  1,  0,  1,  1,  1,  1,  1,  0,  0,  0,  0,  1,  0, ] ;
+    var passedFeatures =  [ 9,  18,  25,  1,  1,  1,  0,  0,  0,  0,  0,  0,  1,  1,  1,  1,  1,  1,  0,  0,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  0,  0,  0,  1,  0,  0,  1,  0,  0,  0,  0,  0,  1,  1,  1,  1,  0,  1, ] ;
+
+    var failedScenarios =  [ 10,  20,  20,  2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  2,  0,  1,  1,  0,  1,  1,  1,  2,  1,  0,  0,  0,  0,  2,  0, ] ;
+    var passedScenarios =  [ 10,  20,  20,  2,  2,  2,  0,  0,  0,  0,  0,  0,  2,  2,  2,  2,  2,  2,  0,  0,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  1,  1,  0,  2,  1,  1,  2,  1,  1,  1,  0,  1,  2,  2,  2,  2,  0,  2, ] ;
+
+    var passedSteps =  [ 1,  3,  5,  15,  15,  8,  0,  0,  0,  0,  0,  0,  8,  8,  8,  8,  8,  8,  0,  0,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  8,  6,  6,  4,  8,  6,  6,  8,  6,  6,  6,  4,  6,  8,  8,  8,  8,  2,  8, ] ;
+    var failedSteps =  [ 10,  30,  50,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  2,  0,  1,  1,  0,  1,  1,  1,  2,  1,  0,  0,  0,  0,  2,  0, ] ;
+    var skippedSteps =  [ 100,  300,  500,  2,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  2,  0,  1,  1,  0,  1,  1,  1,  2,  1,  0,  0,  0,  0,  4,  0, ] ;
+    var pendingSteps =  [ 1000,  3000,  5000,  1,  1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, ] ;
+    var undefinedSteps =  [ 10000,  30000,  50000,  3,  3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, ] ;
+
+    var durations =  [ 3206126182398,  3206126182399,  3206126182310,  99355732889,  99355732889,  11742885600,  0,  0,  0,  0,  0,  0,  8688731200,  8688731200,  11742885600,  11742885600,  11742885600,  11742885600,  0,  0,  13487431700,  13487431700,  11626755300,  23602514300,  42464631400,  17209159100,  15144101600,  15146856500,  14850503400,  14225873200,  18527656000,  19745215100,  19216820200,  20612373400,  25417188800,  18156824400,  20591238300,  23421373800,  24113131600,  19595635700,  18490001800,  12842663000,  23804775300,  18089924700,  18382717700,  23913468100,  15908691800,  16377240400,  22261935100,  14719705800,  16279432100,  18169028300,  41020886000,  19235052600,  19402087400,  28834560200,  30788474900, ] ;
+
+
+
+    var chartFeaturesData = {
+        labels: buildNumbers,
+        datasets: [
+            {
+                label: "Failed",
+                data: failedFeatures,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#F2928C", // same as failed class in css file
+                borderColor: "rgba(192,0,0,1)",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false,
+            },
+            {
+                label: "Passed",
+                data: passedFeatures,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#92DD96", // same as passed class in css file
+                borderColor: "rgba(0,192,192,1)",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            }
+        ]
+    };
+
+    var featuresContext = document.getElementById("trends-features-chart");
+    window.myBar = new Chart(featuresContext, {
+        type: "line",
+        data: chartFeaturesData,
+        options: {
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+
+
+    var chartScenariosData = {
+        labels: buildNumbers,
+        datasets: [
+            {
+                label: "Failed",
+                data: failedScenarios,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#F2928C", // same as failed class in css file
+                borderColor: "rgba(192,0,0,1)",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            },
+            {
+                label: "Passed",
+                data: passedScenarios,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#92DD96", // same as passed class in css file
+                borderColor: "rgba(0,192,192,1)",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            }
+        ]
+    };
+
+    var scenariosContext = document.getElementById("trends-scenarios-chart");
+    window.myBar = new Chart(scenariosContext, {
+        type: "line",
+        data: chartScenariosData,
+        options: {
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+
+
+    var chartStepsData = {
+        labels: buildNumbers,
+        datasets: [
+            {
+                label: "Failed",
+                data: failedSteps,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#F2928C",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            },
+            {
+                label: "Skipped",
+                data: skippedSteps,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#8AF",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            },
+            {
+                label: "Pending",
+                data: pendingSteps,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#F5F28F",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            },
+            {
+                label: "Undefined",
+                data: undefinedSteps,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#F5B975",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            },
+            {
+                label: "Passed",
+                data: passedSteps,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#92DD96",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            }
+        ]
+    };
+
+    var stepsContext = document.getElementById("trends-steps-chart");
+    window.myBar = new Chart(stepsContext, {
+        type: "line",
+        data: chartStepsData,
+        options: {
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+
+
+    var chartDurationsData = {
+        labels: buildNumbers,
+        datasets: [
+            {
+                label: "Duration",
+                data: durations,
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#C0C0C0",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: "miter",
+                pointBorderColor: "rgba(0,0,0,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 5,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                spanGaps: false
+            }
+        ]
+    };
+
+  function formatDuration(duration) {
+    // gets in nanosecs, outs in secs
+    return moment.duration(duration / 1000000).humanize();
+  }
+
+  var durationsContext = document.getElementById("trends-durations-chart");
+  new Chart(durationsContext, {
+    type: "line",
+    data: chartDurationsData,
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            userCallback: function(value) { return formatDuration(value); }
+          }
+        }]
+      },
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            return data.datasets[tooltipItem.datasetIndex].label + ": " + formatDuration(tooltipItem.yLabel);
+          }
+        }
+      }
+    }
+  });
+});
+  </script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+          <li role="presentation"   class="active" ><a href="overview-trends.html">Trends</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>step.demoTest</td>
+        <td>101</td>
+      <td>10 oct. 2023, 11:40</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Trends Statistics</h2>
+      <p>The following graph shows features, scenarios and steps for a period of time.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="charts">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h4>Features:</h4>
+      <canvas id="trends-features-chart" height="50"></canvas>
+      <br/>
+
+      <h4>Scenarios:</h4>
+      <canvas id="trends-scenarios-chart" height="50"></canvas>
+      <br/>
+
+      <h4>Steps:</h4>
+      <canvas id="trends-steps-chart" height="50"></canvas>
+      <br/>
+
+      <h4>Durations:</h4>
+      <canvas id="trends-durations-chart" height="50"></canvas>
+    </div>
+  </div>
+</div>
+<br/>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

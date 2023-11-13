@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- syntax highlighting through 
+     custom JS / CSS resources and
+     highlightjs.org -->
+<xml>
+  <someNode attr="value" />
+</xml>
