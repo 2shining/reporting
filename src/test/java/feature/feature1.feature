@@ -1,4 +1,3 @@
-Feature: Gestion des produits dans un magasin
 
   Scenario: Ajouter un nouveau produit
     Given que je suis connecté en tant qu'administrateur
