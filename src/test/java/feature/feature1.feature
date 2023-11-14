@@ -11,4 +11,4 @@ Feature: Utilisation d'une calculatrice
   Scenario: Soustraction de deux nombres
     Given la calculatrice est allumée
     When je saisis "5 - 3"
-    Given la calculatrice est allumée
+    Given la calculatrice est allum
