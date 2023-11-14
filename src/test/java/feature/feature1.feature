@@ -19,4 +19,4 @@ Feature: Gestion des produits dans un magasin
     When je vais sur la page d'administration des produits
     And je recherche le produit "Souris sans fil"
     And je clique sur le bouton de suppression du produit
-    Then le produit "Souris sans fil" devrait être supprimé de la liste
+    Then le produit "Souris sans fil" devrait être supprimé
