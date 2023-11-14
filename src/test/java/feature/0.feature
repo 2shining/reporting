@@ -1,1 +1,0 @@
-Nouveau contenu par défaut
