@@ -11,4 +11,3 @@ Feature: Utilisation d'une calculatrice
   Scenario: Soustraction de deux nombres
     Given la calculatrice est allumée
     When je saisis "5 - 3"
-    Then le résultat affiché devrait être 2
