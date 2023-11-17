@@ -1,4 +1,4 @@
-Feature: Login Functionality kakakakakapapakaxa
+Feature: Login Functionality vava
 
   Scenario: User logs in with valid credentials
     Given the user is on the login page
