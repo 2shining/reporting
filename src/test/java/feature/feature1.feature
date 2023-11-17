@@ -1,4 +1,4 @@
-Feature: Login Functionality kakakaka
+Feature: Login Functionality kakakakaka
 
   Scenario: User logs in with valid credentials
     Given the user is on the login page
