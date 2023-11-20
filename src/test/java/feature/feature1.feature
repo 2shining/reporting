@@ -1,4 +1,4 @@
-Feature: Login Functionality connectify
+Feature: Login Functionality con
 
   Scenario: User logs in with valid credentials
     Given the user is on the login page
