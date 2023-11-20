@@ -1,4 +1,4 @@
-import io.cucumber.java.en.Given; mama
+import io.cucumber.java.en.Given; mamapa
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import static org.junit.Assert.*;
