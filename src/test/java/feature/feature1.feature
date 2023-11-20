@@ -1,4 +1,4 @@
-Feature: Login Functionality xapapapa
+Feature: Login Functionality xapapapao
 
   Scenario: User logs in with valid credentials
     Given the user is on the login page
