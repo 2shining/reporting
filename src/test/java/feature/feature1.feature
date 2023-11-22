@@ -1,4 +1,4 @@
-Feature: Login Functionality gagokaba
+Feature: Login Functionality infinityFREE
 
   Scenario: User logs in with valid credentials
     Given the user is on the login page
