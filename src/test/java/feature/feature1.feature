@@ -1,4 +1,4 @@
-Feature: Calculator 
+Feature: Calculator promax
 
   Scenario: Add two numbers
     Given I have a calculator
