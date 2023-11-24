@@ -1,4 +1,4 @@
-Feature: Calculator Addition
+Feature: Calculator 
 
   Scenario: Add two numbers
     Given I have a calculator
