@@ -1,4 +1,4 @@
-Feature: Calculator aicha
+Feature: Calculator claire
 
   Scenario: Add two numbers
     Given I have a calculator
