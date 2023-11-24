@@ -1,4 +1,4 @@
-Feature: Calculator predator
+Feature: Calculator predatorrrr
 
   Scenario: Add two numbers
     Given I have a calculator
