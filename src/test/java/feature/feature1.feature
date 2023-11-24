@@ -1,4 +1,4 @@
-Feature: Calculator promax
+Feature: Calculator aicha
 
   Scenario: Add two numbers
     Given I have a calculator
