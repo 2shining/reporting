@@ -1,4 +1,4 @@
-Feature: Calculator claire2day
+Feature: Calculator claire2dayto
 
   Scenario: Add two numbers
     Given I have a calculator
