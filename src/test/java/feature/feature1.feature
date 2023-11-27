@@ -1,8 +1,12 @@
-Scenario: User can successfully register
-Given the user accesses the registration page
-When the user fills out the registration form with the following information:
-| First Name | Last Name | Email                | Password     |
-| John       | Doe       | john.doe@email.com   | password123  |
-And the user submits the form
-Then the user should be redirected to the login page
-And a confirmation message should be displayed
+Feature: HomePage for connection
+  Home page that the user will see
+
+  Scenario: Verify HomePage application
+    Given I navigate to the HomePage
+    When I press the Login button
+    Then I will be ringed to my Page
+
+  Scenario:Verify HomePage application2
+    Given I navigate to the HomePage2
+    When I press the Login button2
+    Then I will be ringed to my Page2
