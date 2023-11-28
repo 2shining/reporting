@@ -1,23 +1,24 @@
 package step;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.junit.AfterClass; // Ajoutez cette ligne
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+import java.io.IOException;
+
 public class step1 {
     WebDriver driver;
+
     @Given("je suis sur la page de login")
     public void jeSuisSurLaPageDeLogin() {
-        System.setProperty("webdriver.chrome.driver","src/test/java/org/andry/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/java/org/andry/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://localhost//Projet Quebec//Login-MAJ.php");
     }
@@ -33,8 +34,6 @@ public class step1 {
     @And("je clique sur le bouton {string}")
     public void jeCliqueSurLeBouton(String arg0) {
         driver.findElement(By.id("button")).click();
-        /*boolean redirectedToUnknownPage = driver.getCurrentUrl().equals("http://localhost/SMI%20project/acceuil.php");
-        Assert.assertTrue("Utilisateur non reconnu", redirectedToUnknownPage);*/
     }
 
     @Then("je dois être redirigé vers la page d'accueil")
@@ -47,7 +46,6 @@ public class step1 {
     public void jEntreDesIdentifiantsIncorrects() throws InterruptedException {
         driver.findElement(By.id("ut")).sendKeys("andryramariarison@gmaail.com");
         driver.findElement(By.id("mtd")).sendKeys("231120200");
-        /*driver.findElement(By.id("button")).click();*/
 
         Thread.sleep(2000);
     }
@@ -55,11 +53,24 @@ public class step1 {
     @Then("je dois recevoir un message indiquant {string}")
     public void jeDoisRecevoirUnMessageIndiquant(String expectedErrorMessage) throws InterruptedException {
         Thread.sleep(2000);
-
-        /*WebElement errorMessageElement = driver.findElement(By.xpath("//*[contains(text(), '" + expectedErrorMessage + "')]"));
-
-        Assert.assertNotNull("Le message d'erreur attendu n'a pas été trouvé", errorMessageElement);*/
-
         driver.quit();
+    }
+
+    // Méthode pour récupérer le nom de la classe
+    private static String getClassName() {
+        String className = Thread.currentThread().getStackTrace()[2].getClassName();
+        return className.substring(className.lastIndexOf('.') + 1);
+    }
+
+    // Méthode pour générer le dossier de rapport avec le nom de la classe
+    static File getReportDirectory() {
+        String className = getClassName();
+        return new File("target/maven-cucumber-report/" + className);
+    }
+
+    @AfterClass
+    public static void generateReports() throws IOException {
+        File reportOutputDirectory = getReportDirectory();
+        // Le reste de votre code pour la configuration et la génération de rapports
     }
 }
