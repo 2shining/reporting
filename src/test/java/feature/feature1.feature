@@ -1,6 +1,12 @@
-Feature: Calculator claire2day
+Feature: HomePage for connection
+  Home page that the user will see
 
-  Scenario: Add two numbers
-    Given I have a calculator
-    When I add 5 and 7
-    Then the result should be 12
+  Scenario: Verify HomePage application
+    Given I navigate to the HomePage
+    When I press the Login button
+    Then I will be ringed to my Page
+
+  Scenario:Verify HomePage application2
+    Given I navigate to the HomePage2
+    When I press the Login button2
+    Then I will be ringed to my Page2
