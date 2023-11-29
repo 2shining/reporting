@@ -51,32 +51,32 @@ $(document).ready(function() {
 $(document).ready(function() {
 
     var chartData = {
-        labels:  [ "@tag1",  "@tag2", ] ,
+        labels:  [] ,
         datasets: [
             {
                 label: "Passed",
                 backgroundColor: "#92DD96",
-                data:  [ 100.00,  100.00, ] 
+                data:  [] 
             },
             {
                 label: "Failed",
                 backgroundColor: "#F2928C",
-                data:  [ 0.00,  0.00, ] 
+                data:  [] 
             },
             {
                 label: "Skipped",
                 backgroundColor: "#8AF",
-                data:  [ 0.00,  0.00, ] 
+                data:  [] 
             },
             {
                 label: "Pending",
                 backgroundColor: "#F5F28F",
-                data:  [ 0.00,  0.00, ] 
+                data:  [] 
             },
             {
                 label: "Undefined",
                 backgroundColor: "#F5B975",
-                data:  [ 0.00,  0.00, ] 
+                data:  [] 
             }
         ]
     };
@@ -139,7 +139,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>step.demoTest</td>
         <td>101</td>
-      <td>29 nov. 2023, 09:04</td>
+      <td>29 nov. 2023, 09:12</td>
     </tr>
   </tbody>
 </table>
@@ -158,118 +158,12 @@ $(document).ready(function() {
 </div>
 
 
-  <div class="container-fluid" id="charts">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <canvas id="tags-chart" height="50"></canvas>
-      </div>
-    </div>
-  </div>
 
 <br/>
 <div class="container-fluid" id="report">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-
-<table id="tablesorter" class="stats-table table-hover">
-
-<thead>
-  <tr class="header dont-sort">
-      <th></th>
-    <th colspan="6">Steps</th>
-    <th colspan="3">Scenarios</th>
-    <th colspan="2">Features</th>
-  </tr>
-  <tr>
-    <th>Tag</th>
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="skipped">Skipped</th>
-    <th class="pending">Pending</th>
-    <th class="undefined">Undefined</th>
-    <th class="total">Total</th>
-
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="total">Total</th>
-
-    <th>Duration</th>
-    <th>Status</th>
-  </tr>
-</thead>
-
-
-  <tbody>
-      <tr>
-        <td class="tagname"><a href="report-tag_2210141206.html">@tag1</a></td>
-
-        <td      class="passed"    >4</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">4</td>
-
-        <td  class="passed"    >1</td>
-        <td >0</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="14347244700">14.347</td>
-        <td class="passed">Passed</td>
-      </tr>
-      <tr>
-        <td class="tagname"><a href="report-tag_2210141207.html">@tag2</a></td>
-
-        <td      class="passed"    >4</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td >0</td>
-        <td class="total">4</td>
-
-        <td  class="passed"    >1</td>
-        <td >0</td>
-        <td class="total">1</td>
-
-        <td class="duration" data-value="13008771400">13.008</td>
-        <td class="passed">Passed</td>
-      </tr>
-  </tbody>
-
-  <tfoot class="total">
-    <tr>
-      <td></td>
-      <td>8</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>8</td>
-
-      <td>2</td>
-      <td>0</td>
-      <td>2</td>
-
-      <td class="duration">27.356</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>100.00%</td>
-      <td>0.00%</td>
-      <td>0.00%</td>
-      <td>0.00%</td>
-      <td>0.00%</td>
-      <td></td>
-      <td>100.00%</td>
-      <td>0.00%</td>
-      <td></td>
-      <td></td>
-      <td>100.00%</td>
-    </tr>
-  </tfoot>
-</table>
-
+        <p>You have no tags in your cucumber report</p>
     </div>
   </div>
 </div>

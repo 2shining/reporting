@@ -44,9 +44,10 @@ $(document).ready(function() {
 
 
 
-<title>Cucumber Reports (no 101) - Feature: Connexion &amp;agrave; un syst&amp;egrave;me</title>
+<title>Cucumber Reports (no 101) - Failures Overview</title>
 
 </head>
+
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top" id="navigation">
@@ -58,7 +59,7 @@ $(document).ready(function() {
         <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
         <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
           <li role="presentation" ><a href="overview-trends.html">Trends</a></li>
-        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+        <li role="presentation"  class="active" ><a href="overview-failures.html">Failures</a></li>
       </ul>
     </div>
   </div>
@@ -80,7 +81,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>step.demoTest</td>
         <td>101</td>
-      <td>29 nov. 2023, 09:04</td>
+      <td>29 nov. 2023, 09:12</td>
     </tr>
   </tbody>
 </table>
@@ -93,69 +94,10 @@ $(document).ready(function() {
 
 <div id="report-lead" class="container-fluid">
   <div class="col-md-10 col-md-offset-1">
-    <h2>Feature Report</h2>
+    <h2>Failures Overview</h2>
+      <p>The following summary displays scenarios that failed.</p>
   </div>
 </div>
-
-
-<div class="container-fluid" id="report">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <table class="stats-table">
-
-
-<thead>
-  <tr class="header dont-sort">
-      <th colspan="2"></th>
-    <th colspan="6">Steps</th>
-    <th colspan="3">Scenarios</th>
-    <th colspan="2">Features</th>
-  </tr>
-  <tr>
-    <th>Feature</th>
-      <th>Qualifier</th>
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="skipped">Skipped</th>
-    <th class="pending">Pending</th>
-    <th class="undefined">Undefined</th>
-    <th class="total">Total</th>
-
-    <th class="passed">Passed</th>
-    <th class="failed">Failed</th>
-    <th class="total">Total</th>
-
-    <th>Duration</th>
-    <th>Status</th>
-  </tr>
-</thead>
-
-
-        <tbody>
-        <tr>
-          <td class="tagname">Connexion &agrave; un syst&egrave;me</td>
-            <td>Chrome 80, mobile</td>
-          <td      class="passed"    >8</td>
-          <td >0</td>
-          <td >0</td>
-          <td >0</td>
-          <td >0</td>
-          <td class="total">8</td>
-
-          <td  class="passed"    >2</td>
-          <td >0</td>
-          <td class="total">2</td>
-
-          <td class="duration" data-value="27356016100">27.356</td>
-          <td class="passed">Passed</td>
-        </tr>
-        </tbody>
-
-      </table>
-    </div>
-  </div>
-</div>
-
 
 
 <div class="container-fluid">
@@ -173,40 +115,28 @@ $(document).ready(function() {
 <div class="container-fluid" id="report">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <div class="feature">
 
-<div class="tags indention">
-</div>
-
-
-<div class="brief passed">
-  <span class="keyword indention">Feature</span>
-  <span class="name">Connexion &agrave; un syst&egrave;me</span>
-
-
-</div>
-
-        <div class="description indention"></div>
-
-        <div class="elements inner-level">
+        <div class="elements">
 
 <div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_4055591560.html">Gestion des utilisateurs</a>
+    </div>
 
 
 <div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_2210141206.html">@tag1</a>
 </div>
 
 
-  <span class="lead-duration duration">14.347</span>
+  <span class="lead-duration duration">0.017</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
-  <span class="name">Connexion r&eacute;ussie</span>
+  <span class="name">Cr&eacute;er un nouvel utilisateur</span>
 
 
      <i class="chevron fa fa-fw"></i>
@@ -222,9 +152,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-2">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -240,9 +170,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-Given passed">
   <span class="keyword indention">Given</span>
-  <span class="name">je suis sur la page de login</span>
+  <span class="name">qu'un utilisateur non enregistr&eacute; est sur la page d'inscription</span>
 
-  <span class="lead-duration duration">8.924</span>
+  <span class="lead-duration duration">0.002</span>
 
 </div>
 
@@ -265,11 +195,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
-  <span class="name">j'entre les d&eacute;tails de mon identit&eacute; et mot de passe corrects</span>
+  <span class="name">l'utilisateur saisit son nom d'utilisateur <span class="argument">&quot;JohnDoe&quot;</span> et son mot de passe <span class="argument">&quot;MotDePasse123&quot;</span></span>
 
-  <span class="lead-duration duration">2.410</span>
+  <span class="lead-duration duration">0.014</span>
 
 </div>
 
@@ -277,6 +207,20 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-3">
+          <a>java.lang.NullPointerException:</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details  in ">
+        <pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;this.driver&quot; is null
+	at step.us2.step2.userEntersCredentials(step2.java:26)
+	at &#10045;.l'utilisateur saisit son nom d'utilisateur &quot;JohnDoe&quot; et son mot de passe &quot;MotDePasse123&quot;(file:///C:/Users/ANDRY/IdeaProjects/projet_L2/src/test/java/step/us2/feature2.feature:5)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -292,11 +236,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
-  <span class="name">je clique sur le bouton <span class="argument">&quot;Log In&quot;</span></span>
+  <span class="name">clique sur le bouton d'inscription</span>
 
-  <span class="lead-duration duration">0.686</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -319,11 +263,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">je dois &ecirc;tre redirig&eacute; vers la page d'accueil</span>
+  <span class="name">le syst&egrave;me devrait afficher un message de succ&egrave;s d'inscription</span>
 
-  <span class="lead-duration duration">2.326</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -355,22 +299,24 @@ $(document).ready(function() {
 
 
 <div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_4055591560.html">Gestion des utilisateurs</a>
+    </div>
 
 
 <div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_2210141207.html">@tag2</a>
 </div>
 
 
-  <span class="lead-duration duration">13.008</span>
+  <span class="lead-duration duration">0.000</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-3">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-4">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
-  <span class="name">Connexion refus&eacute;e avec identifiants incorrects</span>
+  <span class="name">Connexion d'un utilisateur existant</span>
 
 
      <i class="chevron fa fa-fw"></i>
@@ -379,16 +325,16 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-3" class="collapse collapsable-details  in ">
+  <div id="element-4" class="collapse collapsable-details  in ">
 
 
 
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-4">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-5">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -398,15 +344,15 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-4" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-5" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
-<div class="brief step-name-Given passed">
+<div class="brief step-name-Given undefined">
   <span class="keyword indention">Given</span>
-  <span class="name">je suis sur la page de login</span>
+  <span class="name">qu'un utilisateur enregistr&eacute; est sur la page de connexion</span>
 
-  <span class="lead-duration duration">7.513</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -429,11 +375,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
-  <span class="name">j'entre des identifiants incorrects</span>
+  <span class="name">l'utilisateur saisit son nom d'utilisateur <span class="argument">&quot;UtilisateurExistant&quot;</span> et son mot de passe <span class="argument">&quot;MotDePasseSecret&quot;</span></span>
 
-  <span class="lead-duration duration">2.277</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -456,11 +402,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
-  <span class="name">je clique sur le bouton <span class="argument">&quot;Log In&quot;</span></span>
+  <span class="name">clique sur le bouton de connexion</span>
 
-  <span class="lead-duration duration">0.736</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -483,11 +429,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">je dois recevoir un message indiquant <span class="argument">&quot;Utilisateur non reconnu&quot;</span></span>
+  <span class="name">le syst&egrave;me devrait rediriger l'utilisateur vers son tableau de bord</span>
 
-  <span class="lead-duration duration">2.481</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -519,7 +465,6 @@ $(document).ready(function() {
 
         </div>
 
-      </div>
     </div>
   </div>
 </div>

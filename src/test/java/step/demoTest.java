@@ -13,13 +13,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import step.us1.step1; // Assurez-vous que l'importation est correcte
+import step.us2.step2; // Assurez-vous que l'importation est correcte
 
 
 public class demoTest {
     @Test
     public void generateReports() throws IOException {
-        File reportOutputDirectory = step1.getReportDirectory(); // Assurez-vous que la méthode getReportDirectory() est définie dans step1
+        File reportOutputDirectory = step2.getReportDirectory(); // Assurez-vous que la méthode getReportDirectory() est définie dans step1
         List<String> jsonFiles = new ArrayList<>();
         jsonFiles.add("src/test/resources/json/sample.json");
 

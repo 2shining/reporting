@@ -80,7 +80,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>step.demoTest</td>
         <td>101</td>
-      <td>29 nov. 2023, 08:51</td>
+      <td>29 nov. 2023, 09:04</td>
     </tr>
   </tbody>
 </table>
@@ -133,19 +133,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@tag1</td>
+          <td      class="passed"    >4</td>
           <td >0</td>
-          <td      class="failed"    >1</td>
-          <td     class="skipped"   >3</td>
+          <td >0</td>
           <td >0</td>
           <td >0</td>
           <td class="total">4</td>
 
+          <td  class="passed"    >1</td>
           <td >0</td>
-          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="69802451500">1:9.802</td>
-          <td class="failed">Failed</td>
+          <td class="duration" data-value="14347244700">14.347</td>
+          <td class="passed">Passed</td>
         </tr>
         </tbody>
 
@@ -187,12 +187,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1:9.802</span>
+  <span class="lead-duration duration">14.347</span>
 
 
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Scenario</span>
   <span class="name">Connexion r&eacute;ussie</span>
 
@@ -210,9 +210,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-2">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -226,11 +226,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Given failed">
+<div class="brief step-name-Given passed">
   <span class="keyword indention">Given</span>
   <span class="name">je suis sur la page de login</span>
 
-  <span class="lead-duration duration">1:9.802</span>
+  <span class="lead-duration duration">8.924</span>
 
 </div>
 
@@ -238,38 +238,6 @@ $(document).ready(function() {
 
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-3">
-          <a>org.openqa.selenium.SessionNotCreatedException:</a>
-      </div>
-      <div id="msg-3" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: chrome not reachable 
-Host info: host: 'DESKTOP-FBBJ28I', ip: '192.168.1.249'
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:83)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:51)
-	at step.us1.step1.jeSuisSurLaPageDeLogin(step1.java:22)
-	at &#10045;.je suis sur la page de login(file:///C:/Users/ANDRY/IdeaProjects/projet_L2/src/test/java/step/us1/feature1.feature:5)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -285,11 +253,11 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
       <div class="step">
 
 
-<div class="brief step-name-When skipped">
+<div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
   <span class="name">j'entre les d&eacute;tails de mon identit&eacute; et mot de passe corrects</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">2.410</span>
 
 </div>
 
@@ -312,11 +280,11 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">je clique sur le bouton <span class="argument">&quot;Log In&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.686</span>
 
 </div>
 
@@ -339,11 +307,11 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
       <div class="step">
 
 
-<div class="brief step-name-Then skipped">
+<div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
   <span class="name">je dois &ecirc;tre redirig&eacute; vers la page d'accueil</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">2.326</span>
 
 </div>
 
