@@ -1,4 +1,4 @@
-Feature: Connexion à un system
+Feature: Connexion à un système
 
   @tag1
   Scenario: Connexion réussie
