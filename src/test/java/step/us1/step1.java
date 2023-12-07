@@ -1,4 +1,4 @@
-package step.us1;
+package step.us;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
