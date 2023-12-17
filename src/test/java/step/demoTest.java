@@ -5,6 +5,7 @@ import net.masterthought.cucumber.ReportBuilder;
 import net.masterthought.cucumber.presentation.PresentationMode;
 import net.masterthought.cucumber.sorting.SortingMethod;
 import org.junit.Test;
+import step.projet1.us1.step1;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,13 +14,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import step.us2.step2; // Assurez-vous que l'importation est correcte
-
 
 public class demoTest {
     @Test
     public void generateReports() throws IOException {
-        File reportOutputDirectory = step2.getReportDirectory(); // Assurez-vous que la méthode getReportDirectory() est définie dans step1
+        File reportOutputDirectory = step1.getReportDirectory(); // Assurez-vous que la méthode getReportDirectory() est définie dans step1
         List<String> jsonFiles = new ArrayList<>();
         jsonFiles.add("src/test/resources/json/sample.json");
 
