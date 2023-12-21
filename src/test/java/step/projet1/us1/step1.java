@@ -1,7 +1,5 @@
 package step.projet1.us1;
 
-//noob
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
