@@ -1,4 +1,4 @@
-Feature: Gestion des Fuseaux Horaires Personnalisés
+Feature: Gestion des Fuseaux Horaires Personnalisé
 
   En tant qu'utilisateur souhaitant suivre l'heure d'un lieu spécifique,
   Je souhaite pouvoir ajouter un fuseau horaire personnalisé,
