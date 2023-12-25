@@ -1,4 +1,4 @@
-package step.projet1.us1;
+package step.projet1.
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
